@@ -4,7 +4,8 @@
     },
     "extends": ["airbnb", "plugin:jest/recommended"],
     "globals": {
-        "document": true
+        "document": true,
+        "window": true
     },
     "plugins": [
         "jest"
@@ -15,5 +16,12 @@
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
         "jest/valid-expect": "error"
+    },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "moduleDirectory": ["node_modules", "/"]
+          }
+        }
     }
 }
