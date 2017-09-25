@@ -1,0 +1,19 @@
+{   
+    "env": {
+        "jest/globals": true
+    },
+    "extends": ["airbnb", "plugin:jest/recommended"],
+    "globals": {
+        "document": true
+    },
+    "plugins": [
+        "jest"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/valid-expect": "error"
+    }
+}
