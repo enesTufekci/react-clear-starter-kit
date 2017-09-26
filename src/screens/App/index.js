@@ -1,14 +1,24 @@
-/* @flow */
+// /* @flow */
 import React from 'react';
-import Header from 'screens/App/components/Header';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+
+import { initiateStore, history } from 'config/store/initiateStore';
+import Home from './screens/Home';
+import About from './screens/About';
+
+const store = initiateStore();
 
 const App = () => (
-  <div className="App">
-    <Header />
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-  </div>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </div>
+    </ConnectedRouter>
+  </Provider>
 );
 
 export default App;
