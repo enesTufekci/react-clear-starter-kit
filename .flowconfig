@@ -4,7 +4,6 @@ suppress_comment=\\(.\\|\n\\)*\\#FlowIgnoreAsset
 esproposal.class_instance_fields=enable
 esproposal.class_static_fields=enable
 module.system.node.resolve_dirname=src
-flowide.enable
 flowide.useCodeSnippetsOnFunctionSuggest
 
 [ignore]
