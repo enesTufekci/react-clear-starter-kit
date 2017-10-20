@@ -26,3 +26,23 @@ nav.app-navigation a{
   text-align: center;
   padding:0 15px;
 }
+
+div.zen-container{
+  text-align: center;
+  padding:4em;
+}
+
+div.zen-container div.zen{
+  font-size:2em;
+  padding:1em;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin-bottom:1em;
+}
+
+div.zen-container button{
+  background: transparent;
+  border-radius: none;
+  outline: none;
+  border:1px solid;
+  cursor: pointer;
+}

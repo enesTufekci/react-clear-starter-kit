@@ -28,8 +28,15 @@ declare module 'history/createBrowserHistory' {
   declare module.exports: any;
 }
 
-declare module 'redux-devtools-extension' {
+declare module 'redux-thunk' {
   declare module.exports: any;
 }
 
+declare module 'axios' {
+  declare module.exports: any;
+}
+
+declare module 'redux-devtools-extension' {
+  declare module.exports: any;
+}
 /*flow-enable*/
