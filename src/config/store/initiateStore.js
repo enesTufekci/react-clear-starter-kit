@@ -1,29 +1,21 @@
 /* @flow */
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import createHistory from 'history/createBrowserHistory';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { routerMiddleware } from 'react-router-redux';
+import thunk from 'redux-thunk';
 
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-const state = {
-  env: process.env,
-  // Pass other initial state 
-};
-
-const initialState = () => state;
-
-const rootReducer = asyncReducers =>
-  combineReducers({
-    location: routerReducer,
-    root: initialState,
-    ...asyncReducers,
-  });
+import rootReducer from './rootReducer';
 
 export const history = createHistory();
 
 export const initiateStore = () => {
-  const middleware = routerMiddleware(history);
+  const middleware = [
+    routerMiddleware(history),
+    thunk,
+  ];
 
   let enhancers = [];
 
@@ -36,7 +28,7 @@ export const initiateStore = () => {
 
   const store = createStore(
     rootReducer(),
-    compose(applyMiddleware(middleware), ...enhancers),
+    compose(applyMiddleware(...middleware), ...enhancers),
   );
 
   return store;

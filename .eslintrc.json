@@ -2,13 +2,14 @@
     "env": {
         "jest/globals": true
     },
-    "extends": ["airbnb", "airbnb-flow", "plugin:jest/recommended"],
+    "extends": ["airbnb", "plugin:jest/recommended","plugin:flowtype/recommended"],
     "globals": {
         "document": true,
         "window": true
     },
     "plugins": [
-        "jest"
+        "jest",
+        "flowtype"
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
